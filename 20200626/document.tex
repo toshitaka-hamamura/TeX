@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\begin{document}
+
+\makeatletter
+\DeclareRobustCommand{\Word@Count}[2]{%
+  \@tempcnta\z@
+  \@tfor \@tmpa:=#1\do{\advance\@tempcnta\@ne}%
+  \rule{0pt}{1em}#1\par\vspace*{-1em}%
+  \noindent\rule{\linewidth}{0.2pt}\\[-0.5em]%
+  \hfill{文字数}: \the\@tempcnta/#2\par%
+}
+\makeatother
+
+\end{document}

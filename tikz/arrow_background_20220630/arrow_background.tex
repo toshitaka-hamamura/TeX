@@ -1,0 +1,31 @@
+% see https://tex.stackexchange.com/questions/419101/how-to-add-a-node-style-option-layer-background-for-node-draw
+\documentclass[dvipdfmx, tikz]{standalone}
+
+\usepackage{tikz}    
+\usetikzlibrary{backgrounds}
+
+\begin{document}
+	
+	\pgfdeclarelayer{bg}
+	\pgfsetlayers{bg,main}
+	
+	\tikzset{
+		background/.style={%
+			execute at begin node={\begin{pgfonlayer}{bg}},
+				execute at end node={\end{pgfonlayer}}
+		}
+	}
+	
+	\begin{tikzpicture}
+		
+	\node[circle,fill=blue,label={blue node behind red line, good}] at (0,0){};
+
+		\begin{pgfonlayer}{bg}
+		\draw[thick,red] (-1,0) -- (1,0);
+		\end{pgfonlayer}
+		
+		\node[circle,fill=blue,background,label={blue node above red line, bad}] at (0,-1){};
+		\draw[thick,red] (-1,-1) -- (1,-1);
+		
+	\end{tikzpicture}
+\end{document}

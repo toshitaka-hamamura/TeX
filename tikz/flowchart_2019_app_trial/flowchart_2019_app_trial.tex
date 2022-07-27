@@ -1,0 +1,70 @@
+\documentclass[dvipdfmx,12pt]{article}
+%----packages----%
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+%----preamble----%
+\pagestyle{empty}
+\tikzstyle{phase} = [rectangle, rounded corners, fill=white, minimum width = 3cm, minimum height = 0.75, text centered, text width = 2cm, draw = black]
+\tikzstyle{process} = [rectangle, minimum width=5cm, minimum height=1cm, text centered, text width=5cm, draw=black]
+\tikzstyle{process_long} = [rectangle, fill=white, minimum width=16cm, minimum height=1cm, text centered, text width=16cm, draw=black]
+\tikzstyle{exclusion} = [rectangle, minimum width=4.5cm, minimum height=2cm, text centered, text width=4.5cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+%----document----%
+\begin{document}
+	\pgfdeclarelayer{bg}
+	\pgfsetlayers{bg,main}
+	
+	\tikzset{
+		background/.style={%
+			execute at begin node={\begin{pgfonlayer}{bg}},
+				execute at end node={\end{pgfonlayer}}
+		}
+	}
+	
+	\noindent
+	\textbf{Figure 1}\\~\\
+	\textit{Flow chart of the study}
+	\begin{center}
+		\begin{tikzpicture}[node distance=2.5cm]		
+			%-----enrollment----%
+			\node(enrollment)[phase]{Enrollment};
+			\node(screen)[process, below of = enrollment, yshift = 1.25cm]{Assessed for eligibility\\ (\textit{n} = 1,692)};
+			\node(eligibility)[process, below of = screen, yshift = 0.6cm]{Agreed to participate\\(\textit{n} = 250)};
+			\node(exclusion)[exclusion,right of=screen,xshift=3cm,yshift=-1cm]{
+				\begin{flushleft}{
+						\begin{center}
+							Excluded:\\(\textit{n} = 1,442)\\
+						\end{center}
+						\vspace{1mm}					
+						1. Not Android User\\
+						2. Other reasons\\}
+				\end{flushleft}
+			};
+			%-----randomization----%			
+			\node(randomize)[process,below of = eligibility, yshift = 0.6cm]{Randomized};
+			\node(allocation)[phase, below of = enrollment, yshift = -3.75cm]{Allocation};	
+			\node(intv2)[process,below of=randomize,xshift=0cm,yshift = -0.5cm]{Allocated to the \\Feedback Group\\(\textit{n} = 81)};	
+			\node(intv1)[process,right of=intv2,xshift=-8cm,yshift=0cm]{Allocated to the \\Study Mode Group\\(\textit{n} = 79)};
+			\node(ctrl1)[process,left of=intv2,xshift=8cm,yshift=0cm]{Allocated to the \\Control Group\\(\textit{n} = 90)};
+			\node(intv2_b)[process_long,below of=intv2,yshift = 0.3cm]{Baseline Period: Two weeks};
+			\node(intv2_u)[process_long,below of=intv2_b,yshift = 0.75cm]{Update Period: One week};
+			\node(intv2_i)[process_long,below of=intv2_u,yshift = 0.75cm]{Intervention Period: Four weeks};
+			%-----analyze----%			
+			\node(analysis)[phase, below of = enrollment, yshift = -12.5cm]{Analyzed};
+			\node(intv2_analyze)[process,below of=intv2_i,yshift = -0.25cm]{Analyzed\\(\textit{n} = 81)};
+			\node(intv1_analyze)[process,left of=intv2_analyze,xshift=-3cm]{Analyzed\\(\textit{n} = 79))};
+			\node(ctrl1_analyze)[process,right of=intv2_analyze,xshift=3cm]{Analyzed\\(\textit{n} = 90)};
+			\begin{pgfonlayer}{bg}
+				\draw[arrow](screen)--(eligibility);
+				\draw[arrow](screen.south)|- ++(3.1,-0.25)(eligibility);
+				\draw[arrow](eligibility)--(randomize);
+				\draw[arrow](randomize)--(intv1);
+				\draw[arrow](randomize)--(intv2);
+				\draw[arrow](randomize)--(ctrl1);
+				\draw[arrow](intv1)--(intv1_analyze);
+				\draw[arrow](intv2)--(intv2_analyze);
+				\draw[arrow](ctrl1)--(ctrl1_analyze);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+	\end{center}
+\end{document}

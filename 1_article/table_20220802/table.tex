@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{ltablex} 
+\newcolumntype{a}{>{\hsize=.1\hsize}c} 
+\begin{document}
+\begin{table}[ht!]
+	\caption{Item analysis SAS-SV}
+\begin{center}
+	\begin{tabular}{wc{0.1cm}m{5cm}wc{1.5cm}wc{1.5cm}wc{1.5cm}}
+		\toprule
+		Item & Description & Mean (SD) & \shortstack{Corrected\\item-total\\correlation}& \shortstack{Cronbach's $\alpha$\\if item deleted} \\
+		\midrule
+		1 		&Missing planned work due to smartphone use& 2.33 (1.28) & .71 & .65\\
+		2 		&Having a hard time concentrating in class, while doing assignments, 
+		or while working due to smartphone use & 2.15 (1.22) & .72 & .66 \\
+		3 		&Feeling pain in the wrists or at the back of the neck while using a 
+		smartphone & 2.78 (1.50) & .52 & .50 \\
+		4 		&Won't be able to stand not having a smartphone & 2.97 (1.46) & .72 & 	.68 \\ 
+		5 		&Feeling impatient and fretful when I am not holding my smartphone & 2.11 (1.16) & .76 & .71 \\
+		6 		&Having my smartphone in my mind even when I am not using it & 2.09 (1.17) & .77 & .71 \\
+		7 		&I will never give up using my smartphone even when my daily life is 
+		already greatly affected by it. & 2.66 (1.30) & .74 & .70 \\
+		8 		&Constantly checking my smartphone so as not to miss conversations 
+		between other people on Twitter or Facebook & 2.12 (1.27) & .60 & .57 \\
+		9 		&Using my smartphone longer than I had intended & 3.24 (1.46) & .67 & .63 \\
+		10		&The people around me tell me that I use my smartphone too much. & 2.26 (1.30) & .61 & .58 \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Descriptive statistics and correlation coefficient with SAS-SV at T1}
+\begin{center}	
+	\begin{tabular}{m{4.5cm}wc{0.5cm}wc{2cm}wc{0.75cm}wc{1.5cm}wc{0.5cm}wc{0.5cm}wc{0.5cm}}
+	\toprule
+	Measure 					&Time& Mean (SD) 	&Median	& Range 	& $\omega$	& $\rho$& \textit{p}-value\\
+	\midrule
+	SAS-SV						&T1	&25.75 (10.04)	&26	&10--60		&.92		&--		&--\\
+	&T2	&24.30 (9.65)	&25		&10--60		&.92		&.72	&$<$.001\\
+	SIATS-SV					&T1	&27.65 (10.80)	&25		&16--78		&.87		&.62	&$<$.001\\
+	&T2	&29.77 (11.33)	&28		&16--76		&.87		&.59	&.59\\
+	Smartphone use time			&T1	&2.49 (1.96)	&2		&0.5--12.5	&--			&.47	&$<$.001\\ 
+	&T2	&2.47 (1.85)	&2		&0.5--12.5	&--			&.41		&.41\\
+	CIUS						&T1	&12.94 (10.25)	&12		&0--56		&.93		&.49	&$<$.001\\
+	&T2	&15.23 (10.37)	&15		&0--56		&.94		&.60	&.60\\
+	IGDS						&T1	&0.56 (1.35)	&0		&0--9 		&.81		&.23	&$<$.001\\
+	&T2	&0.68 (1.59)	&0		&0--9 		&.85		&.26	&$<$.001\\
+	AUDIT						&T1	&5.21 (5.57)	&3		&1--36		&.85		&.11	&$<$.001\\
+	&T2	&4.33 (5.64)	&2		&0--39		&.85		&.08	&$<$.001\\
+	CES-D						&T1	&16.32 (10.65)	&14 	&0--60		&.90		&.30	&$<$.001\\
+	&T2	&15.29 (10.48)	&13		&0--60		&.90		&.30	&$<$.001\\
+	LSAS						&T1	&49.05 (29.92)	&46		&0--144		&.97		&.20	&$<$.001\\
+	&T2	&54.36 (32.77)	&52		&0--144		&.97		&.13	&$<$.001\\
+	STAI-state					&T1	&45.43 (11.33)	&46		&20--80		&.92		&.25	&$<$.001\\
+	&T2	&49.96 (10.84)	&50		&20--80		&.92		&.22	&$<$.001\\
+	STAI-trait					&T1	&47.00 (11.34)	&48 	&20--80		&.92		&.26	&$<$.001\\		
+	OCI							&T1	&30.98 (29.42)	&20		&0--154		&.98		&.37	&$<$.001\\
+	ASRS						&T1	&18.60 (10.29)	&18		&0--68		&.92		&.37	&$<$.001\\
+	AQ							&T1	&22.37 (6.93)	&23 	&1--46		&.73		&.16	&$<$.001\\
+	BIS-11: Attentional			&T1	&17.36 (3.44)	&17 	&10--31		&.65		&.30	&$<$.001\\
+	BIS-11: Motor				&T1	&22.15 (4.59)	&22		&12--45		&.71		&.13	&$<$.001\\
+	BIS-11: Nonplanning			&T1	&34.03 (4.80)	&34		&20--52		&.75		&.25	&$<$.001\\
+	Big-five: Openness			&T1	&46.47 (11.21)	&47		&12--84		&.91		&.01	&.68\\
+	Big-five: Conscientiousness	&T1	&52.58 (10.37)	&52 	&12--84		&.89		&--.16	&$<$.001\\
+	Big-five: Extroversion		&T1	&49.18 (13.02)	&49 	&12--84		&.93		&--.05	&.003\\
+	Big-five: Agreeableness		&T1	&52.47 (10.36)	&52 	&12--84		&.89		&--.16	&$<$.001\\
+	Big-five: Neuroticism		&T1	&51.74 (14.75)	& 52 	&12--84		&.95		&.26	&$<$.001\\
+	\bottomrule
+	\multicolumn{8}{l}{\parbox{14cm}{\textit{Note.} AQ = Autism Quotient. ASRS = Adult ADHD Self-Report Scale. AUDIT = Alcohol Use Disorder Identification Test. BIS-11 = Barratt Impulsiveness Scale, Version 11. CES-D = Center for Epidemiological Studies Depression. CIUS = Compulsive Internet Use Scale. IGDS = Internet Gaming Disorder Scale. LSAS = Liebowitz Social Anxiety Scale. OCI = Obsessive-Compulsive Inventory. SAS-SV = Smartphone Addiction Scale--Short Version. SIATS-SV = Short Version of the Smartphone-based Internet Addiction Tendency Scale. STAI = The State-Trait Anxiety Inventory. T1 = December 2019. T2 = December 2020/January 2021.}}
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}

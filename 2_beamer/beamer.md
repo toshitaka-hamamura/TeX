@@ -1,11 +1,6 @@
-+-----------------------------------------+-----------------------------+----------------------------------+
-| Problem（問題）                         | Solution（解決策）          | Memo（メモ）                     |
-+=========================================+=============================+==================================+
-| Section cannot be displayed in Japanese | Use the pxjahyper package   | \usepackage{pxjahyper}           |
-|                                         |                             |                                  |
-| セクションが日本語で文字化けする        | pxjahyperのパッケージを使う |                                  |
-+-----------------------------------------+-----------------------------+----------------------------------+
-| Create a new slide in one frame         | Use \pagebreak              | \\begin{frame}[allowframebreaks] |
-|                                         |                             |                                  |
-|                                         | \pagebreakを使う。          |                                  |
-+-----------------------------------------+-----------------------------+----------------------------------+
+# MarkDown Help Guide
+
+| Problem（問題） | Solution（解決策） | Solution（解決策） |
+| -------------- | ----------------- | ----------------- |
+| Section cannot be displayed in Japanese.セクションが日本語で文字化けする | Use the pxjahyper package. pxjahyperのパッケージを使う | \usepackage{pxjahyper}  |
+| Create a new slide in one frame | Use \pagebreak. \pagebreakを使う。 | \begin{frame}[allowframebreaks] |
